@@ -1,0 +1,19 @@
+composer install
+docker build -t grpc:1.19.0 --build-arg GRPC_VERSION=1.19.0 .
+docker build -t grpc:1.20.0 --build-arg GRPC_VERSION=1.20.0 .
+docker build -t grpc:1.26.0 --build-arg GRPC_VERSION=1.26.0 .
+
+echo =========================
+echo gRPC 1.19.0
+echo =========================
+docker run -it --rm --name my-running-app grpc:1.19.0
+
+echo =========================
+echo gRPC 1.20.0
+echo =========================
+docker run -it --rm --name my-running-app grpc:1.20.0
+
+echo =========================
+echo gRPC 1.26.0
+echo =========================
+docker run -it --rm --name my-running-app grpc:1.26.0
